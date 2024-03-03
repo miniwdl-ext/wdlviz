@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=42", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wdlviz"
+description = "WDL workflow visualization"
+dynamic = ["version"]
+readme = "README.md"
+urls = { repository = "https://github.com/miniwdl-ext/wdlviz.git" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "miniwdl",
+    "graphviz",
+]
+
+[project.scripts]
+wdlviz = "wdlviz:main"
+
+[project.optional-dependencies]
+# pip install --upgrade -e .[dev]
+dev = [
+    "twine",
+    "pre-commit",
+    "ruff",
+]
+
+[tool.setuptools_scm]
+write_to = "wdlviz/_version.py"
+
+[tool.ruff]
+line-length = 100
