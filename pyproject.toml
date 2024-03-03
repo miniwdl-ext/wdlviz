@@ -24,6 +24,7 @@ wdlviz = "wdlviz:main"
 [project.optional-dependencies]
 # pip install --upgrade -e .[dev]
 dev = [
+    "build",
     "twine",
     "pre-commit",
     "ruff",
